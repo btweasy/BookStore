@@ -1,5 +1,5 @@
 <script>
-git --versionimport RegistrationPage from '@/components/RegistrationPage/RegistrationPage.vue';
+git --versiongit rebase -i --rootimport RegistrationPage from '@/components/RegistrationPage/RegistrationPage.vue';
 
 export default {
   components: {
