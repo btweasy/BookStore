@@ -1,4 +1,4 @@
-<style module src="src/components/RegistrationPage/registration.module.css"></style>
+<style module src="./login.module.css"></style>
 
 <template>
   <div :class="$style.container">
@@ -6,15 +6,10 @@
 
     <div :class="$style.formSide">
       <img src="@/components/Icons/logo.png" alt="Book Store Logo" :class="$style.imageLogo">
-      <p :class="$style.welcome">Welcome</p>
-      <h3 :class="$style.h3">Register now</h3>
+      <p :class="$style.welcome">Welcome Back</p>
+      <h3 :class="$style.h3">Log in to your account</h3>
 
-      <form @submit.prevent="register">
-        <div :class="$style.formGroup">
-          <label for="name">Name</label>
-          <input type="text" id="name" v-model="name" placeholder="John Doe" required />
-        </div>
-
+      <form @submit.prevent="login">
         <div :class="$style.formGroup">
           <label for="email">E-mail</label>
           <input type="email" id="email" v-model="email" placeholder="john@mail.com" required />
@@ -25,10 +20,10 @@
           <input type="password" id="password" v-model="password" placeholder="********" required />
         </div>
 
-        <button type="submit" :class="$style.registerBtn">Register</button>
+        <button type="submit" :class="$style.loginBtn">Login</button>
       </form>
 
-      <button type="button" :class="$style.loginBtn" @click="$router.push('/login')">Login</button>
+      <button type="button" :class="$style.registerBtn" @click="$router.push('/register')">Register</button>
     </div>
   </div>
 </template>
@@ -37,18 +32,21 @@
 export default {
   data() {
     return {
-      name: "",
       email: "",
       password: ""
     };
   },
   methods: {
-    register() {
-      alert(`User Registered:\nName: ${this.name}\nEmail: ${this.email}`);
-      this.name = "";
+    login() {
+      if (!this.email.includes("@") || this.password.length < 6) {
+        alert("Please enter valid email and password (at least 6 characters).")
+        return;
+      }
+      alert(`User Logged In:\nEmail: ${this.email}`);
       this.email = "";
       this.password = "";
     }
   }
 };
 </script>
+

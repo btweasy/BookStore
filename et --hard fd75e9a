@@ -1,0 +1,15 @@
+[33ma0658e9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit: Delted common files from repo
+[33mfd75e9a[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{1}: rebase (finish): returning to refs/heads/main
+[33mfd75e9a[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{2}: rebase (pick): Temporary commit
+[33mfa084c1[m HEAD@{3}: rebase (reword): First commit
+[33mee60ec9[m HEAD@{4}: rebase: fast-forward
+[33m3aaa08d[m HEAD@{5}: rebase: fast-forward
+[33mf2d24f0[m HEAD@{6}: rebase (start): checkout f2d24f00710c791fe93b2d3c7f85fc1f8fddcafd
+[33md704461[m HEAD@{7}: rebase (abort): returning to refs/heads/main
+[33md704461[m HEAD@{8}: rebase (abort): returning to refs/heads/main
+[33ma5b051f[m HEAD@{9}: commit (rebase): Initial commit
+[33md704461[m HEAD@{10}: commit: Temporary commit
+[33mee60ec9[m HEAD@{11}: pull origin main --rebase (finish): returning to refs/heads/main
+[33mee60ec9[m HEAD@{12}: pull origin main --rebase (pick): Первый коммит
+[33m3aaa08d[m HEAD@{13}: pull origin main --rebase (start): checkout 3aaa08d70864b7f1da33488a8788bed3e2692341
+[33ma73904e[m HEAD@{14}: commit (initial): Первый коммит

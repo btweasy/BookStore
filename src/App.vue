@@ -1,16 +1,11 @@
 <script>
-git --versiongit rebase -i --rootimport RegistrationPage from '@/components/RegistrationPage/RegistrationPage.vue';
-
-export default {
-  components: {
-    Registration: RegistrationPage
-  }
-};
+export default {};
 </script>
 
 <template>
   <div class="container">
-    <Registration/>
+    <router-view />
+    <RegistrationPage />
   </div>
 </template>
 
@@ -19,6 +14,3 @@ export default {
   text-align: center;
 }
 </style>
-
-
-
