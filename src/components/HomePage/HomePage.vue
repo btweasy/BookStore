@@ -89,7 +89,7 @@ export default {
       clearInterval(this.interval);
     },
     goToBooksPage() {
-      this.$router.push("/books");
+      this.$router.push("/home");
     }
   },
   beforeUnmount() {

@@ -1,6 +1,6 @@
 <template>
     <div class="book-details">
-      <button class="back-button" @click="$router.push('/books')">← Back</button>
+      <button class="back-button" @click="$router.push('/home')">← Back</button>
       <div class="book-content">
         <img :src="book.image" :alt="book.title" class="book-image" />
         <div class="book-info">

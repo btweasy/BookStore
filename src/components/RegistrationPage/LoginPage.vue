@@ -43,6 +43,7 @@ export default {
         return;
       }
       alert(`User Logged In:\nEmail: ${this.email}`);
+      this.$router.push('/home')
       this.email = "";
       this.password = "";
     }
