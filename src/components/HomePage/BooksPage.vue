@@ -1,7 +1,7 @@
 <template>
   <div class="books-page">
     <div class="blok">
-      <button class="back-button" @click="$router.push('/home')">← Back</button>
+      <button class="back-button" @click="$router.push('/')">← Back</button>
       <h2 class="best-seller-title">Best Seller</h2>
     </div>
     <div class="book-list">
@@ -21,6 +21,7 @@
 export default {
   data() {
     return {
+
       books: [
         { id: 1, title: "Dune", author: "Frank Herbert", price: "87,75", image: "/books/9781101658055.webp" },
         { id: 2, title: "1984", author: "George Orwell", price: "35,75", image: "/books/9780451524935.webp" },
@@ -39,9 +40,9 @@ export default {
   },
   methods: {
     goToHome() {
-      this.$router.push("/home");
+      this.$router.push("/");
     }
-  }
+  },
 };
 </script>
 
@@ -62,7 +63,7 @@ export default {
   margin-bottom: 20px;
 }
 
-
+ 
 .back-button {
   background: #EF2346;
   border: none;
@@ -73,13 +74,13 @@ export default {
   padding: 12px 24px;
   border-radius: 12px;
   transition: background 0.3s, transform 0.2s;
-  display: flex;
+  display: flex; 
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  justify-content: center; 
+  gap: 8px; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  white-space: nowrap;
+  white-space: nowrap; 
 }
 
 
