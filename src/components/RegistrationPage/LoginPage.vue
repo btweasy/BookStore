@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { useUserStore } from "@/store/users";
+
 export default {
   data() {
     return {
@@ -39,15 +41,22 @@ export default {
   methods: {
     login() {
       if (!this.email.includes("@") || this.password.length < 6) {
-        alert("Please enter valid email and password (at least 6 characters).")
+        alert("Please enter valid email and password (at least 6 characters).");
         return;
       }
+
+      const userStore = useUserStore();
+
+      userStore.setEmail(this.email);
+      console.log("Saved Email:", userStore.email);
+
       alert(`User Logged In:\nEmail: ${this.email}`);
-      this.$router.push('/home')
+      this.$router.push("/home");
+
+      // Очищаем форму после входа
       this.email = "";
       this.password = "";
     }
   }
 };
 </script>
-
