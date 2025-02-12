@@ -1,7 +1,7 @@
 <template>
   <div class="books-page">
     <div class="blok">
-      <button class="back-button" @click="$router.push('/')">← Back</button>
+      <button class="back-button" @click="$router.push('/home')">← Back</button>
       <h2 class="best-seller-title">Best Seller</h2>
     </div>
     <div class="book-list">

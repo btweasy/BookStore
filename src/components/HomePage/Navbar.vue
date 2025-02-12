@@ -5,14 +5,14 @@
       <img src="/navbar/logo.jpg" @click="goToBooksPage" alt="Bookstore Logo" class="logo-img" />
     </div>
 
-    <!-- Search Bar -->
+    <!-- Search bar -->
     <div class="search-container">
       <input type="text" placeholder="Search" class="search-input" />
     </div>
 
     <!-- Icons -->
     <div class="icons">
-      <div class="profile-container">
+      <div class="profile-container" ref="profileContainer">
         <button class="icon-btn" @click="toggleMenu">
           <img src="/navbar/user.png" alt="User" class="icon-img" />
         </button>
@@ -57,6 +57,12 @@ export default {
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
     },
+    closeMenuOnClickOutside(event) {
+      const profileContainer = this.$refs.profileContainer;
+      if (profileContainer && !profileContainer.contains(event.target)) {
+        this.menuOpen = false;
+      }
+    },
     logout() {
       this.userStore.email = "";
       this.$router.push("/");
@@ -64,6 +70,12 @@ export default {
     goToBooksPage() {
       this.$router.push("/books");
     }
+  },
+  mounted() {
+    document.addEventListener("click", this.closeMenuOnClickOutside);
+  },
+  beforeUnmount() {
+    document.removeEventListener("click", this.closeMenuOnClickOutside);
   }
 };
 </script>
@@ -121,6 +133,7 @@ export default {
   outline: none;
   font-size: 16px;
   transition: background 0.2s ease-in-out;
+  margin-top: 10px;
 }
 
 .search-input:hover {
@@ -133,6 +146,7 @@ export default {
   gap: 10px;
   flex-shrink: 0;
   margin-left: 20px;
+  margin-bottom: 4px;
 }
 
 .icon-btn {

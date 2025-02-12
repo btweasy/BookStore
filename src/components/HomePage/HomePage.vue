@@ -194,9 +194,11 @@ margin-bottom: 20px;
 
 
 h2 {
-font-size: 22px;
-font-weight: bold;
-color: #0f0d1f;
+  font-size: 26px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  text-transform: capitalize;
+  letter-spacing: 1px;
 }
 
 .view-all {
