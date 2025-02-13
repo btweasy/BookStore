@@ -10,9 +10,9 @@
         <p class="summary">{{ book.summary }}</p>
         <div class="purchase-section">
           <span class="price">{{ book.price }} $</span>
-          <button class="buy-button" @click="$router.push('/payment')"> Buy Now</button>
+          <button class="buy-button"> Buy Now</button>
           <button class="like-button"> Like</button>
-          <button class="buy-button" @click="$router.push('/cart')">Add to Cart</button>
+          <button class="buy-button">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -141,15 +141,6 @@ export default {
   created() {
     this.book = this.books.find((b) => b.id == this.id);
   },
-  addToCart() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  if (!cart.find((b) => b.id === this.book.id)) {
-    cart.push(this.book);
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
-  this.$router.push("/cart");
-}
-
   
 };
 </script>
