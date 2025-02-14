@@ -79,18 +79,28 @@ methods: {
   },
   updateSlidePosition() {
     const slides = this.$refs.slides;
-    const offset = -(this.currentIndex * 100);
-    slides.style.transform = `translateX(${offset}%)`;
+    if (slides) { // Перевіряємо, чи існує елемент
+      const offset = -(this.currentIndex * 100);
+      slides.style.transform = `translateX(${offset}%)`;
+    }
   },
   startAutoSlide() {
-    this.interval = setInterval(this.nextSlide, 7000);
+    this.interval = setInterval(() => {
+      this.nextSlide();
+    }, 10000);
   },
   stopAutoSlide() {
-    clearInterval(this.interval);
+    if (this.interval) {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
   },
   goToBooksPage() {
     this.$router.push("/books");
   }
+},
+mounted() {
+  this.startAutoSlide();
 },
 beforeUnmount() {
   this.stopAutoSlide();
